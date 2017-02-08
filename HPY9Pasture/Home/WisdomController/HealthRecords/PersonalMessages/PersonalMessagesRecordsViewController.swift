@@ -506,7 +506,7 @@ class PersonalMessagesRecordsViewController: UIViewController,UITableViewDataSou
             picker.sourceType = sourceType
             self.presentViewController(picker, animated: true, completion: nil)
         }else{
-            print("无法打开相机")
+            NSLOG("无法打开相机")
         }
     }
     

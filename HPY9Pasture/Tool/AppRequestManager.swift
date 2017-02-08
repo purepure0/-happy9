@@ -46,10 +46,13 @@ class AppRequestManager: NSObject {
             NSLOG(request)
             NSLOG(json)
             indicator.stopAnimating()
-            if json["status"].string == "success"{
+            if json["status"].string != nil && json["status"].string == "success"{
                 handle(success: true, response: json["data"].string!)
             }else{
-                handle(success: false, response: json["data"].string!)
+                if json["data"].string != nil{
+                    handle(success: false, response: json["data"].string!)
+                }
+                
             }
         }
     }
@@ -66,10 +69,12 @@ class AppRequestManager: NSObject {
             NSLOG(request)
             NSLOG(json)
             indicator.stopAnimating()
-            if json["status"].string == "success"{
+            if json["status"].string != nil && json["status"].string == "success"{
                 handle(success: true, response: json["data"]["code"].floatValue)
             }else{
-                handle(success: false, response: json["data"].string!)
+                if json["data"].string != nil{
+                    handle(success: false, response:json["data"].string!)
+                }
             }
         }
         
@@ -88,10 +93,12 @@ class AppRequestManager: NSObject {
             NSLOG(json)
             NSLOG(json1)
             indicator.stopAnimating()
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
             }
         }
         
@@ -115,11 +122,13 @@ class AppRequestManager: NSObject {
             NSLOG(request)
             NSLOG(json1["data"]["code"])
             indicator.stopAnimating()
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
             
@@ -138,11 +147,13 @@ class AppRequestManager: NSObject {
             NSLOG(json)
             NSLOG(request)
             indicator.stopAnimating()
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
         }
@@ -160,14 +171,14 @@ class AppRequestManager: NSObject {
             let json1 = JSON(data:json!)
             indicator.stopAnimating()
             
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
-                
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
             }
-            //            handle(success: true, response: result.data)
             
             }
     }
@@ -185,15 +196,15 @@ class AppRequestManager: NSObject {
             let json1 = JSON(data:json!)
             indicator.stopAnimating()
             
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
-            //            handle(success: true, response: result.data)
-            
         }
     }
     //MARK:修改个人资料[头像]
@@ -209,14 +220,15 @@ class AppRequestManager: NSObject {
             let json1 = JSON(data:json!)
             indicator.stopAnimating()
             
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
-            //            handle(success: true, response: result.data)
             
         }
     }
@@ -233,14 +245,15 @@ class AppRequestManager: NSObject {
             let json1 = JSON(data:json!)
             indicator.stopAnimating()
             
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
-            //            handle(success: true, response: result.data)
             
         }
     }
@@ -257,23 +270,24 @@ class AppRequestManager: NSObject {
             let json1 = JSON(data:json!)
             indicator.stopAnimating()
             
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
-            //            handle(success: true, response: result.data)
             
         }
     }
     //MARK:获取社区养老机构
-    func getOrganizationList(adress:String,latitude:String, longitude:String,type:String, handle:ResponseBlock){
+    func getOrganizationList(cid:String,type:String,beginId:String, handle:ResponseBlock){
         let indicator = JQIndicatorView.init(type: .BounceSpot1)
         indicator.startAnimating()
         let url = Happy_HeaderUrl+"getOrganizationList"
-        let paramDic = ["adress":adress,"latitude":latitude,"longitude":longitude,"type":type]
+        let paramDic = ["cid":cid,"type":type,beginId:"beginId"]
         
         Alamofire.request(.GET,url, parameters: paramDic).response { request, response, json, error in
             NSLOG(json)
@@ -281,15 +295,15 @@ class AppRequestManager: NSObject {
             let json1 = JSON(data:json!)
             indicator.stopAnimating()
             
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
-            //            handle(success: true, response: result.data)
-            
         }
     }
     
@@ -306,15 +320,67 @@ class AppRequestManager: NSObject {
             let json1 = JSON(data:json!)
             indicator.stopAnimating()
             
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
-            //            handle(success: true, response: result.data)
             
+        }
+    }
+    //MARK:获取家庭厨房列表
+    func getHomekitchenListByCommunityId(communityId:String,beginID:String,keyWord:String, handle:ResponseBlock){
+        let indicator = JQIndicatorView.init(type: .BounceSpot1)
+        indicator.startAnimating()
+        let url = Happy_HeaderUrl+"getHomekitchenListByCommunityId"
+        let paramDic = ["cid":communityId,"begin":beginID,"keyword":keyWord]
+        
+        Alamofire.request(.GET,url, parameters: paramDic).response { request, response, json, error in
+            NSLOG(json)
+            NSLOG(request)
+            let json1 = JSON(data:json!)
+            indicator.stopAnimating()
+            
+            if json1["status"].string != nil && json1["status"].string == "success"{
+                //                print(result.datas)
+                handle(success: true, response: json!)
+            }else{
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
+                
+            }
+            
+        }
+    }
+    
+    //MARK:获取家庭厨房食品列表
+    func getFoodListByHomeId(foodID:String,beginID:String, handle:ResponseBlock){
+        let indicator = JQIndicatorView.init(type: .BounceSpot1)
+        indicator.startAnimating()
+        let url = Happy_HeaderUrl+"getFoodListByHomeId"
+        let paramDic = ["hid":foodID,"begin":beginID]
+        
+        Alamofire.request(.GET,url, parameters: paramDic).response { request, response, json, error in
+            NSLOG(json)
+            NSLOG(request)
+            let json1 = JSON(data:json!)
+            indicator.stopAnimating()
+            
+            if json1["status"].string != nil && json1["status"].string == "success"{
+                //                print(result.datas)
+                handle(success: true, response: json!)
+            }else{
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
+                
+            }
+                       
         }
     }
     //MARK:上传图片
@@ -347,11 +413,13 @@ class AppRequestManager: NSObject {
             NSLOG(json1)
             indicator.stopAnimating()
             
-            if json1["status"].string == "success"{
+            if json1["status"].string != nil && json1["status"].string == "success"{
                 //                print(result.datas)
                 handle(success: true, response: json!)
             }else{
-                handle(success: false, response: json1["data"].string!)
+                if json1["data"].string != nil{
+                    handle(success: false, response:json1["data"].string!)
+                }
                 
             }
         }

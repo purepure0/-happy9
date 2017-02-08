@@ -10,6 +10,7 @@ import UIKit
 let LGBackColor = UIColor(red: 239/255.0, green: 239/255.0, blue: 239/255.0, alpha: 1)
 let NavColor = UIColor(red: 81/255.0, green: 166/255.0, blue: 255/255, alpha: 1)
 let MainTextBackColor = RGBACOLOR(149, g: 149, b: 149, a: 1)
+let MainTextColor = RGBACOLOR(50, g: 50, b: 50, a: 1)
 let MainFont = UIFont.systemFontOfSize(13)
 let Screen_H = UIScreen.mainScreen().bounds.height
 let Screen_W = UIScreen.mainScreen().bounds.width
@@ -49,15 +50,15 @@ class TimeManager{
     }
     func begainTimerWithKey(key:String,timeInterval:Float,process:TimerHandle,finish:TimerHandle){
         if taskDic.count > 20 {
-            print("任务太多")
+            NSLOG("任务太多")
             return
         }
         if timeInterval>120 {
-            print("不支持120秒以上后台操作")
+            NSLOG("不支持120秒以上后台操作")
             return
         }
         if taskDic[key] != nil{
-            print("存在这个任务")
+            NSLOG("存在这个任务")
             return
         }
         let task = TimeTask().configureWithTime(key,time:timeInterval, processHandle: process, finishHandle:finish)

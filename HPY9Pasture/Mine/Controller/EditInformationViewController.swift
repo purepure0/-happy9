@@ -223,7 +223,7 @@ class EditInformationViewController: UIViewController,UITableViewDataSource,UITa
             let vc = PublicTextEditViewController()
             vc.title = self.textArray[indexPath.row]
             vc.leftTextLabelText = self.textArray[indexPath.row]+":"
-            if self.userInfor != nil && self.userInfor!["name"] != nil {
+            if self.userInfor != nil && self.userInfor!["name"].string != nil {
                 
                 vc.myTextStr = self.userInfor!["name"].string!
                 
@@ -280,9 +280,9 @@ class EditInformationViewController: UIViewController,UITableViewDataSource,UITa
         if indexPath.row == 0 {
             let cell1 = tableView.dequeueReusableCellWithIdentifier("HeaderPhotoTableViewCell", forIndexPath: indexPath)as!HeaderPhotoTableViewCell
             cell1.setUIWithDic(NSDictionary())
-            if self.userInfor != nil && self.userInfor!["photo"] != nil {
+            if self.userInfor != nil && self.userInfor!["photo"].string != nil {
                 cell1.headerImageView.sd_setImageWithURL(NSURL(string:Happy_ImageUrl+self.userInfor!["photo"].string!), placeholderImage: UIImage(named: "ic_touxi"))
-            }else if self.userInfor != nil && self.userInfor!["sex"] != nil{
+            }else if self.userInfor != nil && self.userInfor!["sex"].string != nil{
                 if self.userInfor!["sex"].string == "1"{
                     cell1.headerImageView.image = UIImage(named:"ic_touxi" )
                 }else{
@@ -298,7 +298,7 @@ class EditInformationViewController: UIViewController,UITableViewDataSource,UITa
         }else if indexPath.row == 2{
             let cell3 = tableView.dequeueReusableCellWithIdentifier("RightArrowAndLabelTableViewCell", forIndexPath: indexPath)as!RightArrowAndLabelTableViewCell
             cell3.setUIWithDic(NSDictionary())
-            if self.userInfor != nil && self.userInfor!["sex"] != nil {
+            if self.userInfor != nil && self.userInfor!["sex"].string != nil {
                 if self.userInfor!["sex"].string == "1"{
                     cell3.lastLabel.text = "男"
                 }else{
@@ -315,7 +315,7 @@ class EditInformationViewController: UIViewController,UITableViewDataSource,UITa
         }else if indexPath.row == 1{
             let cell3 = tableView.dequeueReusableCellWithIdentifier("RightArrowAndLabelTableViewCell", forIndexPath: indexPath)as!RightArrowAndLabelTableViewCell
             cell3.setUIWithDic(NSDictionary())
-            if self.userInfor != nil && self.userInfor!["name"] != nil {
+            if self.userInfor != nil && self.userInfor!["name"].string != nil {
                
                     cell3.lastLabel.text = self.userInfor!["name"].string
                 
@@ -330,7 +330,7 @@ class EditInformationViewController: UIViewController,UITableViewDataSource,UITa
         }else if indexPath.row == 3{
             let cell3 = tableView.dequeueReusableCellWithIdentifier("RightArrowAndLabelTableViewCell", forIndexPath: indexPath)as!RightArrowAndLabelTableViewCell
             cell3.setUIWithDic(NSDictionary())
-            if self.userInfor != nil && self.userInfor!["phone"] != nil {
+            if self.userInfor != nil && self.userInfor!["phone"].string != nil {
                 
                 cell3.lastLabel.text = self.userInfor!["phone"].string
                 
@@ -345,7 +345,7 @@ class EditInformationViewController: UIViewController,UITableViewDataSource,UITa
         }else if indexPath.row == 4{
             let cell3 = tableView.dequeueReusableCellWithIdentifier("RightArrowAndLabelTableViewCell", forIndexPath: indexPath)as!RightArrowAndLabelTableViewCell
             cell3.setUIWithDic(NSDictionary())
-            if self.userInfor != nil && self.userInfor!["birthday"] != nil {
+            if self.userInfor != nil && self.userInfor!["birthday"].string != nil {
 //                let date = NSDate()
                 let dateFormatter = NSDateFormatter.init()
                 dateFormatter.dateFormat = "yyyy年MM月dd日"
@@ -363,7 +363,7 @@ class EditInformationViewController: UIViewController,UITableViewDataSource,UITa
         }else {
             let cell3 = tableView.dequeueReusableCellWithIdentifier("RightArrowAndLabelTableViewCell", forIndexPath: indexPath)as!RightArrowAndLabelTableViewCell
             cell3.setUIWithDic(NSDictionary())
-            if self.userInfor != nil && self.userInfor!["idcard"] != nil {
+            if self.userInfor != nil && self.userInfor!["idcard"].string != nil {
                 //                let date = NSDate()
                 if (self.userInfor!["idcard"].string)?.characters.count > 15 {
                     let str = self.userInfor!["idcard"].string! as NSString
@@ -428,7 +428,7 @@ class EditInformationViewController: UIViewController,UITableViewDataSource,UITa
             picker.sourceType = sourceType
             self.presentViewController(picker, animated: true, completion: nil)
         }else{
-            print("无法打开相机")
+            NSLOG("无法打开相机")
         }
     }
     //MARK: -- UIImagePickerControllerDelegate

@@ -8,11 +8,12 @@
 
 import UIKit
 import SwiftyJSON
+import MJRefresh
 
 class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     let myTableView = UITableView()
-    var userInfor:JSON?
+    var userInfor:Array<JSON> = []
     
     let headerButton1 = UIButton()//日间照料
     let headerButton2 = UIButton()//助老食堂
@@ -34,9 +35,21 @@ class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UIT
         self.title = "社区养老"
         self.view.backgroundColor = LGBackColor
         
-        self.getData("1")
+        
         
         self.createUI()
+        myTableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
+            print("MJ:(下拉刷新)")
+            self.getData("1",beginId: "0")
+            
+            
+        })
+        myTableView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: { () -> Void in
+            print("MJ:(上拉加载)")
+            self.getData("1",beginId: "1")
+            
+        })
+        myTableView.mj_header.beginRefreshing()
         //消除导航栏与self.view之间的黑色分割线
         self.navigationController!.navigationBar.translucent = false
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
@@ -45,19 +58,31 @@ class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UIT
     }
     
     
-    func getData(type:String){
-        AppRequestManager.shareManager.getOrganizationList("", latitude: "", longitude: "", type: type) { (success, response) in
+    func getData(type:String,beginId:String){
+        AppRequestManager.shareManager.getOrganizationList("1",type: type,beginId: beginId) { (success, response) in
             if success {
                 let userInfo1 = JSON(data: response as! NSData)
                 
-                if userInfo1["data"] != nil && userInfo1["data"].array != nil{
-                    self.userInfor = userInfo1["data"]
-                    self.geLabel.text = String(userInfo1["data"].array!.count)
-                    NSLOG(userInfo1["data"].array?.count)
+                if beginId != "0"{
+                    self.userInfor = self.userInfor + userInfo1["data"].array!
+                }else{
+                    if userInfo1["data"] != nil && userInfo1["data"].array != nil{
+                        self.userInfor = userInfo1["data"].array!
+                        self.geLabel.text = String(userInfo1["data"].array!.count)
+                        NSLOG(userInfo1["data"].array?.count)
+                    }
                 }
+                self.myTableView.mj_header.endRefreshing()
+                self.myTableView.mj_footer.endRefreshing()
+                if userInfo1["data"].array?.count == 0{
+                    self.myTableView.mj_footer.endRefreshingWithNoMoreData()
+                }
+                
                 
                 self.myTableView.reloadData()
             }else{
+                self.myTableView.mj_header.endRefreshing()
+                self.myTableView.mj_footer.endRefreshing()
                 alert("数据获取失败", delegate: self)
             }
             
@@ -120,6 +145,7 @@ class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UIT
         self.myTableView.delegate = self
         self.myTableView.separatorStyle = .None
         
+        
         self.myTableView.registerNib(UINib(nibName: "CommunityOlderCareTableViewCell",bundle: nil), forCellReuseIdentifier: "CommunityOlderCareTableViewCell")
        
         
@@ -177,17 +203,18 @@ class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UIT
     
     //MARK: ------TableViewDatasource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        if self.userInfor != nil {
-            return (self.userInfor?.array?.count)!
-        }else{
-            return 0
-        }
+        
+        return self.userInfor.count
+        
         
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("CommunityOlderCareTableViewCell", forIndexPath: indexPath)as!CommunityOlderCareTableViewCell
-        cell.setValueWithInfo((self.userInfor?.array![indexPath.row])!)
+        
+        cell.setValueWithInfo((self.userInfor[indexPath.row]))
+        
+        
         cell.accessoryType = .None
         cell.selectionStyle = .None
         
@@ -202,7 +229,7 @@ class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UIT
             self.headerButton2.selected = false
             self.headerButton3.selected = false
             self.headerButton4.selected = false
-            self.getData("1")
+            self.getData("1",beginId: "0")
             
             UIView.animateWithDuration(0.1, animations: {
                 self.movingLabel.frame = CGRectMake(0, self.headerButton4.height, WIDTH/4, 3*px)
@@ -222,7 +249,7 @@ class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UIT
             self.headerButton1.selected = false
             self.headerButton3.selected = false
             self.headerButton4.selected = false
-            self.getData("2")
+            self.getData("2",beginId: "0")
             UIView.animateWithDuration(0.1, animations: {
                 self.movingLabel.frame = CGRectMake(WIDTH/4, self.headerButton4.height, WIDTH/4, 3*px)
                 self.headerViewImageView.image = UIImage(named: self.imageArray[1])
@@ -238,7 +265,7 @@ class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UIT
             self.headerButton2.selected = false
             self.headerButton1.selected = false
             self.headerButton4.selected = false
-            self.getData("3")
+            self.getData("3",beginId: "0")
             UIView.animateWithDuration(0.1, animations: {
                 self.movingLabel.frame = CGRectMake(WIDTH/4*2, self.headerButton4.height, WIDTH/4, 3*px)
                 self.headerViewImageView.image = UIImage(named: self.imageArray[2])
@@ -255,7 +282,7 @@ class CommunityOlderCareViewController: UIViewController,UITableViewDelegate,UIT
             self.headerButton2.selected = false
             self.headerButton3.selected = false
             self.headerButton1.selected = false
-            self.getData("4")
+            self.getData("4",beginId: "0")
             UIView.animateWithDuration(0.1, animations: {
                 self.movingLabel.frame = CGRectMake(WIDTH/4*3, self.headerButton4.height, WIDTH/4, 3*px)
                 self.headerViewImageView.image = UIImage(named: self.imageArray[3])

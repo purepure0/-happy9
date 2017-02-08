@@ -94,6 +94,10 @@
 		775215261E272589007F09FE /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775215221E272589007F09FE /* UTMini.framework */; };
 		7752152A1E27296C007F09FE /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775215291E27296C007F09FE /* UTDID.framework */; };
 		7752152C1E27670E007F09FE /* EditInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7752152B1E27670E007F09FE /* EditInformationViewController.swift */; };
+		7760E2EF1E4AF7E1007C57E3 /* OutpatientClinicForCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760E2EE1E4AF7E1007C57E3 /* OutpatientClinicForCommunityViewController.swift */; };
+		7760E2F31E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760E2F11E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.swift */; };
+		7760E2F41E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7760E2F21E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.xib */; };
+		7760E2F61E4B1024007C57E3 /* OutpatientClinicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760E2F51E4B1024007C57E3 /* OutpatientClinicDetailsViewController.swift */; };
 		77640FF91DEEB8FF0044F03C /* VedioChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77640FF71DEEB8FF0044F03C /* VedioChatViewController.swift */; };
 		77640FFA1DEEB8FF0044F03C /* VedioChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77640FF81DEEB8FF0044F03C /* VedioChatViewController.xib */; };
 		7764D1431DDEA64600634618 /* WisdomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7764D1421DDEA64600634618 /* WisdomTableViewCell.swift */; };
@@ -119,6 +123,10 @@
 		77724D241E2C67970067B24F /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77724D221E2C67970067B24F /* FoodTableViewCell.swift */; };
 		77724D251E2C67970067B24F /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77724D231E2C67970067B24F /* FoodTableViewCell.xib */; };
 		777E11D11DC0B99F00ABA9C6 /* GXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 777E11D01DC0B99F00ABA9C6 /* GXAlertView.m */; };
+		7795FC1D1E486C880023BB8B /* FamilyServerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7795FC1C1E486C880023BB8B /* FamilyServerVC.swift */; };
+		7795FC201E486D4E0023BB8B /* FamilyServerForChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7795FC1F1E486D4E0023BB8B /* FamilyServerForChildVC.swift */; };
+		7795FC221E486D720023BB8B /* FamilyCareForChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7795FC211E486D710023BB8B /* FamilyCareForChildVC.swift */; };
+		7795FC241E486DA80023BB8B /* ClothesWashServerForChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7795FC231E486DA80023BB8B /* ClothesWashServerForChildVC.swift */; };
 		77A059701DE2D281006363FD /* OC-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A0596F1DE2D281006363FD /* OC-Swift.swift */; };
 		77A95D381E45BFFD0033A5EE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A95D371E45BFFD0033A5EE /* BaseVC.swift */; };
 		77CD097C1DCB47080033454B /* AliyunPlayerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7708A6BA1DC081D0005573D2 /* AliyunPlayerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -395,6 +403,10 @@
 		775215221E272589007F09FE /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
 		775215291E27296C007F09FE /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
 		7752152B1E27670E007F09FE /* EditInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInformationViewController.swift; sourceTree = "<group>"; };
+		7760E2EE1E4AF7E1007C57E3 /* OutpatientClinicForCommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutpatientClinicForCommunityViewController.swift; sourceTree = "<group>"; };
+		7760E2F11E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALLOutpatientClinicTableViewCell.swift; sourceTree = "<group>"; };
+		7760E2F21E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALLOutpatientClinicTableViewCell.xib; sourceTree = "<group>"; };
+		7760E2F51E4B1024007C57E3 /* OutpatientClinicDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutpatientClinicDetailsViewController.swift; sourceTree = "<group>"; };
 		77640FF71DEEB8FF0044F03C /* VedioChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VedioChatViewController.swift; sourceTree = "<group>"; };
 		77640FF81DEEB8FF0044F03C /* VedioChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioChatViewController.xib; sourceTree = "<group>"; };
 		7764D1421DDEA64600634618 /* WisdomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WisdomTableViewCell.swift; sourceTree = "<group>"; };
@@ -426,6 +438,10 @@
 		77724D231E2C67970067B24F /* FoodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
 		777E11CF1DC0B99F00ABA9C6 /* GXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXAlertView.h; sourceTree = "<group>"; };
 		777E11D01DC0B99F00ABA9C6 /* GXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXAlertView.m; sourceTree = "<group>"; };
+		7795FC1C1E486C880023BB8B /* FamilyServerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyServerVC.swift; sourceTree = "<group>"; };
+		7795FC1F1E486D4E0023BB8B /* FamilyServerForChildVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyServerForChildVC.swift; sourceTree = "<group>"; };
+		7795FC211E486D710023BB8B /* FamilyCareForChildVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyCareForChildVC.swift; sourceTree = "<group>"; };
+		7795FC231E486DA80023BB8B /* ClothesWashServerForChildVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesWashServerForChildVC.swift; sourceTree = "<group>"; };
 		77A0596F1DE2D281006363FD /* OC-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "OC-Swift.swift"; path = "Mine/Controller/OC-Swift.swift"; sourceTree = "<group>"; };
 		77A95D371E45BFFD0033A5EE /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		77D3813F1E09071F00A1C2BF /* RecordsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsVC.swift; sourceTree = "<group>"; };
@@ -798,6 +814,7 @@
 			children = (
 				77FBABF61DC899F10068F995 /* HPYHomeController.swift */,
 				77FBAC041DC89AE40068F995 /* WisdomController */,
+				7795FC1B1E486C460023BB8B /* FamilyOlderCare */,
 				77FBABF81DC89A620068F995 /* CAREController */,
 				7708A6311DC08137005573D2 /* View */,
 			);
@@ -1268,6 +1285,25 @@
 			path = alipush;
 			sourceTree = "<group>";
 		};
+		7760E2ED1E4AF7BA007C57E3 /* OutpatientClinicForCommunity */ = {
+			isa = PBXGroup;
+			children = (
+				7760E2F01E4AF858007C57E3 /* View */,
+				7760E2EE1E4AF7E1007C57E3 /* OutpatientClinicForCommunityViewController.swift */,
+				7760E2F51E4B1024007C57E3 /* OutpatientClinicDetailsViewController.swift */,
+			);
+			path = OutpatientClinicForCommunity;
+			sourceTree = "<group>";
+		};
+		7760E2F01E4AF858007C57E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7760E2F11E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.swift */,
+				7760E2F21E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		77640FF61DEEB8BB0044F03C /* VedioChat */ = {
 			isa = PBXGroup;
 			children = (
@@ -1366,6 +1402,25 @@
 				777E11D01DC0B99F00ABA9C6 /* GXAlertView.m */,
 			);
 			path = GXAlertView;
+			sourceTree = "<group>";
+		};
+		7795FC1B1E486C460023BB8B /* FamilyOlderCare */ = {
+			isa = PBXGroup;
+			children = (
+				7795FC1E1E486D050023BB8B /* ChildVC */,
+				7795FC1C1E486C880023BB8B /* FamilyServerVC.swift */,
+			);
+			path = FamilyOlderCare;
+			sourceTree = "<group>";
+		};
+		7795FC1E1E486D050023BB8B /* ChildVC */ = {
+			isa = PBXGroup;
+			children = (
+				7795FC1F1E486D4E0023BB8B /* FamilyServerForChildVC.swift */,
+				7795FC211E486D710023BB8B /* FamilyCareForChildVC.swift */,
+				7795FC231E486DA80023BB8B /* ClothesWashServerForChildVC.swift */,
+			);
+			path = ChildVC;
 			sourceTree = "<group>";
 		};
 		77D381431E090E8800A1C2BF /* View */ = {
@@ -1685,6 +1740,7 @@
 		77FBAC041DC89AE40068F995 /* WisdomController */ = {
 			isa = PBXGroup;
 			children = (
+				7760E2ED1E4AF7BA007C57E3 /* OutpatientClinicForCommunity */,
 				776508431E2875C1007E85AB /* FamilyKitchen */,
 				776A87651E1B74BE00F54B75 /* PayForProperty */,
 				7749D2731E08FA1C00049D98 /* HealthRecords */,
@@ -1836,6 +1892,7 @@
 				774D32601DC3526200DC0401 /* RetireRecordTableViewCell.xib in Resources */,
 				774D325C1DC3523600DC0401 /* RetireTableViewCell.xib in Resources */,
 				77640FFA1DEEB8FF0044F03C /* VedioChatViewController.xib in Resources */,
+				7760E2F41E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.xib in Resources */,
 				7745975A1E0A1D5400902BCE /* HeaderPhotoTableViewCell.xib in Resources */,
 				7708A6BC1DC081D0005573D2 /* AlipaySDK.bundle in Resources */,
 				7708A64D1DC08137005573D2 /* happyInfo.plist in Resources */,
@@ -2051,6 +2108,7 @@
 				776508421E286912007E85AB /* ChangePhoneViewController.swift in Sources */,
 				773CA6B21DC33B380062D6D3 /* PublicTableViewController.swift in Sources */,
 				77A95D381E45BFFD0033A5EE /* BaseVC.swift in Sources */,
+				7795FC201E486D4E0023BB8B /* FamilyServerForChildVC.swift in Sources */,
 				7745975D1E0A1D8700902BCE /* DoubleLabelTableViewCell.swift in Sources */,
 				77D381491E09152400A1C2BF /* PersonalMessagesViewController.swift in Sources */,
 				77F8DAF31E0D006B004508E6 /* AddPhysicalExaminationViewController.swift in Sources */,
@@ -2096,8 +2154,10 @@
 				7708A6C61DC081D0005573D2 /* openssl_wrapper.m in Sources */,
 				77F8DB7D1E0D13A1004508E6 /* UserBindSms.cpp in Sources */,
 				77640FF91DEEB8FF0044F03C /* VedioChatViewController.swift in Sources */,
+				7795FC1D1E486C880023BB8B /* FamilyServerVC.swift in Sources */,
 				776A87711E1B885B00F54B75 /* DetailsTableViewCell.swift in Sources */,
 				7708A6C31DC081D0005573D2 /* DataVerifier.m in Sources */,
+				7760E2EF1E4AF7E1007C57E3 /* OutpatientClinicForCommunityViewController.swift in Sources */,
 				776A87671E1B74DB00F54B75 /* PropertyTableViewController.swift in Sources */,
 				7708A6C11DC081D0005573D2 /* base64.m in Sources */,
 				7708A6D91DC08237005573D2 /* Macro.swift in Sources */,
@@ -2115,6 +2175,7 @@
 				774597611E0A1DC500902BCE /* RightArrowAndLabelTableViewCell.swift in Sources */,
 				7708A64F1DC08137005573D2 /* HPYVideoController.swift in Sources */,
 				77F8DBA31E0D1B6F004508E6 /* VideoPlay.m in Sources */,
+				7795FC241E486DA80023BB8B /* ClothesWashServerForChildVC.swift in Sources */,
 				774597591E0A1D5400902BCE /* HeaderPhotoTableViewCell.swift in Sources */,
 				773C57981E0BCAFB00B43F1E /* FamilyMessagesEditViewController.swift in Sources */,
 				7708A6511DC08137005573D2 /* HPYLoginController.swift in Sources */,
@@ -2129,11 +2190,14 @@
 				77F8DBB31E0D1EBA004508E6 /* RecordViewController.m in Sources */,
 				7708A6521DC08137005573D2 /* HPYRegisterController.swift in Sources */,
 				77F8DB7E1E0D13A1004508E6 /* UserToken.cpp in Sources */,
+				7795FC221E486D720023BB8B /* FamilyCareForChildVC.swift in Sources */,
 				77F8DBB91E0D1F56004508E6 /* RecordPlayViewController.m in Sources */,
 				7708A6431DC08137005573D2 /* MainImageAndTextButton.swift in Sources */,
 				77F8DBA71E0D1BD5004508E6 /* DownloadPicture.m in Sources */,
 				77F8DBAC1E0D1CA9004508E6 /* RestApiInfo.m in Sources */,
+				7760E2F61E4B1024007C57E3 /* OutpatientClinicDetailsViewController.swift in Sources */,
 				774D325B1DC3523600DC0401 /* RetireTableViewCell.swift in Sources */,
+				7760E2F31E4AF88E007C57E3 /* ALLOutpatientClinicTableViewCell.swift in Sources */,
 				77F8DB851E0D13A1004508E6 /* LCOpenApi_ReflectionObject.cpp in Sources */,
 				77A059701DE2D281006363FD /* OC-Swift.swift in Sources */,
 				776506B51E23670C0018E2A6 /* JQIndicatorView.m in Sources */,

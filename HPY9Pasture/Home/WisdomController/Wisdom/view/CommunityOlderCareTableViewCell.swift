@@ -40,26 +40,26 @@ class CommunityOlderCareTableViewCell: UITableViewCell {
         self.lookButton.layer.cornerRadius = self.lookButton.height/2
         self.lookButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.lookButton.layer.borderWidth = 1.5
-        if info["name"] != nil {
+        if info["name"].string != nil {
             self.adresslabel.text = info["name"].string
         }
         
         
         self.adresslabel.font = UIFont.systemFontOfSize(13)
-        if info["principalName"] != nil {
-            self.nameButton.setTitle(info["principalName"].string, forState:.Normal)
+        if info["principalname"].string != nil {
+            self.nameButton.setTitle(info["principalname"].string, forState:.Normal)
         }
         
         self.nameButton.setTitleColor(RGBACOLOR(149, g: 149, b: 149, a: 1), forState: .Normal)
         self.nameButton.contentHorizontalAlignment = .Left
         
-        if info["address"] != nil {
+        if info["address"].string != nil {
             self.adressButton.setTitle(info["address"].string, forState:.Normal)
         }
         self.adressButton.setTitleColor(RGBACOLOR(149, g: 149, b: 149, a: 1), forState: .Normal)
         self.adressButton.contentHorizontalAlignment = .Left
         
-        if info["phone"] != nil {
+        if info["phone"].string != nil {
             self.phoneButton.setTitle(info["phone"].string, forState:.Normal)
         }
         self.phoneButton.setTitleColor(RGBACOLOR(149, g: 149, b: 149, a: 1), forState: .Normal)

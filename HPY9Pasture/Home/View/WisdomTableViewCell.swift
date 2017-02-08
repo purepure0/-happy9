@@ -277,6 +277,17 @@ class WisdomTableViewCell: UITableViewCell {
                 let vc = FamilyKitchenViewController()
                 targets.navigationController?.pushViewController(vc, animated: true)
                 break
+            case 6:
+                //护理站
+//                let vc = FamilyKitchenViewController()
+//                targets.navigationController?.pushViewController(vc, animated: true)
+                break
+            case 7:
+                //社区门诊
+                let vc = OutpatientClinicForCommunityViewController()
+                targets.navigationController?.pushViewController(vc, animated: true)
+                break
+
                 
                 
             default:
@@ -291,6 +302,10 @@ class WisdomTableViewCell: UITableViewCell {
                 targets.navigationController?.pushViewController(vc, animated: true)
                 break
             case 1:
+                //家庭服务
+                let vc = FamilyServerVC()
+                targets.navigationController?.pushViewController(vc, animated: true)
+                
                 break
             case 2:
                 break
